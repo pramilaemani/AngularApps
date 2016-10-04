@@ -29,21 +29,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-//Set routes for different pages
-app.get("/", function(req,res){
-	res.render('index.html');
+app.get('/', function (req, res) {
+  res.render('index.html');
 });
 
-app.get("/home", function(req,res){
-	res.render('partials/home.html');
-});
-
-app.get("/getCampDetails", function(req,res){
-	res.render("partials/getCampDetails.html");
-});
-
-app.get("/getVinDetails", function(req,res){
-	res.render("partials/getVinDetails.html");
+app.get('/partials/:name', function(req, res){
+	var name = req.params.name;
+  	res.render('partials/' + name);
 });
 
 app.listen(3000, function(){
