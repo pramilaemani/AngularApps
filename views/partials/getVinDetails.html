@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="/css/app.css">
   </head>
   <body>
-    <h3>Vin Details Page</h3>
-  
-<label for="campid">Enter Campaign Id: </label>
+  <h3>Vin Details Page</h3>
+<div>     
+<label  for="campid">Enter Campaign Id: </label>
 <input ng-model="form.campid" name="campid">
 
   <button id="btnSubmit" ng-click="getVinDetails()">Get Vin Details</button>
+  </div></br></br></br>
   <div ng-controller="VinDetCtrl"></div>
   <table VinDetailsTable>
     <thead>
